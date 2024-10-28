@@ -117,8 +117,35 @@ console.log(NewArrayTeams)
 Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
 La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.*/
 
+function sliceArray(elements, start, end) {
 
+    start = Math.max(start,0)
 
+    //if(start < 0) {
+        //start = 0
+    //}
+
+    end = Math.min(end, elements.length)
+
+    // if(end > elements.length) {
+    //     end = elements.length
+    // }
+
+    const result = []
+
+    for (let i = start; i < end; i++) {
+        const el = elements[i];
+
+        result.push(el)
+        
+    }
+        return result
+}
+
+const numbers = [1, 3, 4, 5, 6, 9, 3, 4]
+
+const newNumbers = sliceArray(numbers, 2, 6)
+console.log(newNumbers)
 //Funzioni
 
 function randomPointsAndFouls() {
