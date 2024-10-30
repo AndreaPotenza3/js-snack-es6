@@ -51,7 +51,7 @@ Generare numeri random al posto degli 0 nelle proprietà “punti” fatti e “
 Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.*/
 
 // Creiamo un array di oggetti
-const NewArrayTeams = []
+
 const teams = [
     {
         nome: 'Napoli',
@@ -80,36 +80,23 @@ const teams = [
 
 // Aggiungiamo casialmente punti e falli subiti
 
-// teams.forEach(team => {
-//     puntiFatti = randomPointsAndFouls()
-//     falliSubiti = randomPointsAndFouls()
-// })
 
-teams[0].puntiFatti = randomPointsAndFouls() 
-teams[0].falliSubiti = randomPointsAndFouls()
+teams.forEach(teams => {
+    teams.puntiFatti = randomPointsAndFouls() 
+    teams.falliSubiti = randomPointsAndFouls()
+})
 
-teams[1].puntiFatti = randomPointsAndFouls() 
-teams[1].falliSubiti = randomPointsAndFouls()
+console.log(teams)
 
-teams[2].puntiFatti = randomPointsAndFouls() 
-teams[2].falliSubiti = randomPointsAndFouls()
 
-teams[3].puntiFatti = randomPointsAndFouls() 
-teams[3].falliSubiti = randomPointsAndFouls()
+const newTeam = teams.map((teams) => {
+    return {
+        nome: teams.nome,
+        falliSubiti: teams.falliSubiti
+    }
+})
 
-//Selezionare solo nome e falli subiti da ogni oggetto
-
-for (let i = 0; i < teams.length; i++) {
-    const currentElement = teams[i];
-    
-    teams.forEach(team => {
-        delete team['puntiFatti']
-    })
-
-    NewArrayTeams.push(currentElement)
-}
-
-console.log(NewArrayTeams)
+console.log(newTeam)
 
 //
 
